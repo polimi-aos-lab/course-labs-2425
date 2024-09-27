@@ -1,1 +1,13 @@
 /stage/bzImage-amd64
+.*.cmd
+*.mod
+*.mod.*
+*.ko
+.clangd
+*.o.d
+*.bkp
+compile_commands.json
+compile_commands.json.in
+Module.symvers
+modules.order
+
