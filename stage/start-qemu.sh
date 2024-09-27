@@ -82,7 +82,7 @@ if [ "$DEBUG_MODE" == "1" ]; then
 	QEMUMAC+=" -s -S"
 fi
 
-CMD="$QEMUCMD $QEMUMAC -kernel $DIR/bzImage-$BUILD_ARCH -initrd $DIR/initramfs-busybox-$BUILD_ARCH.cpio.gz -append \"$QEMUAPP\""
+CMD="$QEMUCMD $QEMUMAC -kernel \"$DIR/bzImage-$BUILD_ARCH\" -initrd \"$DIR/initramfs-busybox-$BUILD_ARCH.cpio.gz\" -append \"$QEMUAPP\""
 
 echo -e "${CMD}" 
 
