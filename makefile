@@ -14,6 +14,9 @@ rebuild:
 enter-container:
 	docker run -ti -p 5900:5900 -p 8080:6000 -v "`pwd`:/repo" --privileged --rm lkp-$(T):latest /bin/bash 
 
+attach-container:
+	docker exec -it $$(docker ps --filter ancestor=lkp-$(T) --format '{{.ID}}') /bin/bash
+
 stop-container:
 	ps aux | grep -E 'bzImage' | grep -v grep | awk '{print $$2}' | xargs kill -9
 
