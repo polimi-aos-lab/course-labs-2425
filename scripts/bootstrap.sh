@@ -18,12 +18,12 @@ mkdir -p /staging/initramfs/fs
 
 cd /sources/linux
 # make ${df_file} // now we use a .config stored in the repo
-make -j4 ${im_file}
+make -j$(nproc) ${im_file}
 
 # build busybox
 cd /sources/busybox-1.32.1
 make defconfig
-LDFLAGS="--static" make -j4 install
+LDFLAGS="--static" make -j$(nproc) install
 cp ${im_file_path} /staging/bzImage-$__BUILD_ARCH
 
 mkdir -p /staging/initramfs/fs
@@ -35,7 +35,7 @@ cp /sources/init .
 
 if [ ! -f "/staging/initramfs/fs/bin/perf" ]; then
         cd /sources/linux/tools/perf
-        LDFLAGS=-static NO_LIBPYTHON=1 make
+        LDFLAGS=-static NO_LIBPYTHON=1 make -j$(nproc)
         cp perf /staging/initramfs/fs/bin
 fi
 
