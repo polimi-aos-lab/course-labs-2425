@@ -20,6 +20,6 @@ prepare:
 	cp ./aux/module.lds.S-$(__BUILD_ARCH) /sources/linux/scripts/module.lds
 
 rebuild: 
-	/sources/bootstrap.sh
+	/sources/mini-bootstrap.sh
 
 

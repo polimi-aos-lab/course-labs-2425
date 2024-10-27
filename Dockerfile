@@ -39,3 +39,4 @@ COPY ./.dev-config/.vimrc /root
 RUN /bin/bash -c 'if [ "$__ENV" == "full" ]; then source /sources/nvim-post-setup-${__ARCH}.sh; fi'
 
 EXPOSE 5550
+COPY ./scripts/mini-bootstrap.sh /sources

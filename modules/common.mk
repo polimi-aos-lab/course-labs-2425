@@ -34,6 +34,12 @@ copy-to-fs: module.ko
 	mkdir -p /staging/initramfs/fs/modules
 	cp module.ko /staging/initramfs/fs/modules/$(shell basename `pwd`).ko
 
+test: 
+	make prepare
+	make module.ko 
+	make copy-to-fs 
+	/sources/mini-bootstrap.sh
+
 rebuild: copy-to-fs
 	make -C .. rebuild
 

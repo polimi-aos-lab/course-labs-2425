@@ -15,7 +15,7 @@ QEMUCMD=""
 QEMUAPP=""
 BUILD_ARCH=""
 DRY=0
-SMP=1
+SMP=4
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
