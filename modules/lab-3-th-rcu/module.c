@@ -103,7 +103,7 @@ static int manipulate_list_thread_rcu(void *data) {
 static struct task_struct *read_thread;
 static struct task_struct *manipulate_thread;
 
-static void initialize_list() {
+static void initialize_list(void) {
   int i;
 
   // Initialize the list with 10 elements
