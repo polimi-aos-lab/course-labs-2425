@@ -13,3 +13,6 @@ modules.order
 
 stage/perf
 
+/playground/uboot/rootfs.ext4.img
+/playground/uboot/u-boot.bin
+/playground/uefi/src/
