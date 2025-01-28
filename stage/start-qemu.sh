@@ -15,12 +15,12 @@ QEMUCMD=""
 QEMUAPP=""
 BUILD_ARCH=""
 DRY=0
-SMP=4
+SMP=1
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
-for arg in "$@"; do
-  case $arg in
+while [[ $# -gt 0 ]]; do
+  case $1 in
     --arch)
       ARCH=$2
       shift # Remove argument name from processing
